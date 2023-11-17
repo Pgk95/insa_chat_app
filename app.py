@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 socketio = SocketIO(app)    
 
-@app.route('/', methods=['POST', 'GET'], strict_slashes = False)
+@app.route('/insa_chat_app', methods=['POST', 'GET'], strict_slashes = False)
 def index():
     return render_template("index.html")
 
