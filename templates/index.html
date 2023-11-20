@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat webapp</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
 <script type="text/javascript" charset="utf-8">
     var socket = io();
@@ -14,40 +14,24 @@
 </script>
 </head>
 <body>
-    <div class="container">
-        <h1>Solomon abebaw, kidanekal kifle</h1>
+    <div class="signup-container">
+        <form id="signupForm">
+            <h2>Signup</h2>
+            <label for="fullname">Full Name</label>
+            <input type="text" name="fullname" placeholder="Enter your full name" required>
 
-        <div class="actions">
-            <button id="createRoomBtn">Create Room</button>
-            <button id="joinRoomBtn">Join Room</button>
-        </div>
+            <label for="username">Username</label>
+            <input type="text" name="username" placeholder="Enter your username" required>
 
-        <div class="createRoomForm" style="display: none;">
-            <label for="roomName">Room Name</label>
-            <input type="text" id="roomName">
-            <label for="userName">Your Name:</label>
-            <input type="text" id="'userName">
-            <button id="createRoomSubmitBtn">Create Room</button>
-        </div>
+            <label for="email">E-mail</label>
+            <input type="email" name="email" placeholder="Enter your email" required>
 
-        <div class="joinRoomForm" style="display: none;">
-            <label for="'roomCode">Room Code:</label>
-            <input type="text" id="roomCode">
-            <label for="userName">YOur Name:</label>
-            <input type="text" id="userName">
-            <button id="joinRoomSubmitBtn">Join Room</button>
-        </div>
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Enter your password" required>
 
-        <div id="chatArea">
-
-        </div>
-
-        <div class="conatiner">
-            <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Search by emai or username">
-                <button id="searchBtn">Search</button>
-            </div>
-        </div>
+            <button type="button" >Sign Up</button>
+        </form>
     </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>
