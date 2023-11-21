@@ -9,9 +9,15 @@
 <body>
     <div class="signup-container">
         <form id="signupForm">
-            <h2>Welcome to our chatting website</h2>
-            <button type="button" onclick="location.href='/signup'">Sign Up</button>
-            <button type="button" onclick="location.href='/login'">Login</button>
+            <h2>Login</h2>
+
+            <label for="email">E-mail</label>
+            <input type="email" name="email" placeholder="Enter your email" required>
+
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Enter your password" required>
+
+            <button type="button" >Login</button>
         </form>
     </div>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
