@@ -1,0 +1,3 @@
+.env
+gunicorn_config.py
+nginx_config.txt

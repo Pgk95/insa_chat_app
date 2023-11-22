@@ -4,16 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat webapp</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link rel="stylesheet" href="../static/css/index.css">
 </head>
 <body>
-    <div class="signup-container">
-        <form id="signupForm">
-            <h2>Welcome to our chatting website</h2>
-            <button type="button" onclick="location.href='/signup'">Sign Up</button>
-            <button type="button" onclick="location.href='/login'">Login</button>
-        </form>
+    <div class="container-lg">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h2 class="font" id="typed-text">Welcome to our chat website</h2>
+            </div>
+
+            <div class="col-md-6">
+                <a href="{{ url_for('signup') }}"><button class="btn btn-primary btn-block mb-2" type="submit">Sign Up</button></a>
+                <a href="{{ url_for('login') }}"><button class="btn btn-primary btn-block" type="submit">Login</button></a>
+            </div>
+        </div>
     </div>
+    <script>
+        // Initialize Typed.js
+        var typed = new Typed('#typed-text', {
+            strings: ['Welcome to our chat website','Chat with your friends','Share your thoughts'],
+            typeSpeed: 40,
+            backSpeed: 40,
+            backDelay: 1000,
+            startDelay: 1000,
+            loop: true,
+            showCursor: false
+        });
+    </script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>
